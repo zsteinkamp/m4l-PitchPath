@@ -1,6 +1,6 @@
-inlets = 1;
-outlets = 1;
-autowatch = true;
+inlets = 1
+outlets = 1
+autowatch = true
 
 var state = {
   scaleAware: 1,
@@ -12,63 +12,62 @@ var scaleMeta = {
     root: null,
     int: null,
     mode: null,
-  }
-};
-
+  },
+}
 
 function updateScales() {
   //post('UPDATESCALES\n')
   if (!scaleMeta.watchers.root) {
     //post('NOROOTWATERH\n')
-    return;
+    return
   }
   if (!state.scaleAware) {
     //post('NOTSCALEAWARE\n')
     return
   }
 
-  var api = new LiveAPI('live_set');
-  var root = api.get('root_note');
-  var intervals = api.get('scale_intervals');
-  scaleMeta.notes = [];
+  var api = new LiveAPI('live_set')
+  var root = api.get('root_note')
+  var intervals = api.get('scale_intervals')
+  scaleMeta.notes = []
 
-  var root_note = root - 12;
-  var note = root_note;
+  var root_note = root - 12
+  var note = root_note
 
   // fill scaleMeta.notes with valid note numbers
   while (note <= 127) {
     for (var i = 0; i < intervals.length; i++) {
-      var interval = intervals[i];
-      note = root_note + interval;
+      var interval = intervals[i]
+      note = root_note + interval
       if (note >= 0 && note <= 127) {
-        scaleMeta.notes.push(note);
+        scaleMeta.notes.push(note)
       }
     }
-    root_note += 12;
-    note = root_note;
+    root_note += 12
+    note = root_note
   }
   //post('SCALE ' + JSON.stringify(scaleMeta.notes) + '\n')
 }
 
 function quantizeNote(tag, noteNum) {
   if (!state.scaleAware) {
-    outlet(0, tag, noteNum);
+    outlet(0, tag, noteNum)
     return
   }
-  var i = 12;
+  var i = 12
   for (var i = 0; i < 12; i++) {
-    var tryNote = noteNum - i;
+    var tryNote = noteNum - i
     if (scaleMeta.notes.indexOf(tryNote) > -1) {
       //post('QUANTIZE: ' + noteNum + ' => ' + tryNote + '\n');
-      outlet(0, tag, tryNote);
+      outlet(0, tag, tryNote)
       return
     }
   }
 }
 
 function scaleAware(val) {
-  state.scaleAware = val;
-  updateScales();
+  state.scaleAware = val
+  updateScales()
 }
 
 function init() {
@@ -84,4 +83,4 @@ function init() {
   }
 }
 
-post('Reloaded scaleAware.js\n');
+post('Reloaded scaleAware.js\n')
