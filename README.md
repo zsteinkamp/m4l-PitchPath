@@ -1,18 +1,18 @@
-# LineSeq
+# PitchPath
 
-LineSeq is a sequencer that you program by drawing a line or curve.
+PitchPath is a sequencer that you program by drawing a line or curve.
 
-You specify the time duration the line represents, as well as the lowest and highest notes. Send it a MIDI note, and LineSeq will transform or output a note according to where the line is at that time.
+You specify the time duration the line represents, as well as the lowest and highest notes (absolute or relative). Send it a MIDI note, and LineSeq will transform or output a note according to where the line is at that time, optionally with scale awareness.
 
 ![How it Looks](images/device.gif)
 
 ## Installation
 
-[Download the newest .amxd file from the latest release](https://github.com/zsteinkamp/m4l-LineSeq/releaes) or clone this repository, and drag the `LineSeq.amxd` device into a track in Ableton Live.
+[Download the newest .amxd file from the latest release](https://github.com/zsteinkamp/m4l-PitchPath/releaes) or clone this repository, and drag the `PitchPath.amxd` device into a track in Ableton Live.
 
 ## Changelog
 
-* 2025-01-12 [v1](https://github.com/zsteinkamp/m4l-LineSeq/) - Initial release.
+* 2025-01-12 [v1](https://github.com/zsteinkamp/m4l-PitchPath/) - Initial release.
 
 ## Usage
 ...
