@@ -27,7 +27,7 @@ Send it a MIDI note, and LineSeq will transform or output a note according to wh
 * Enable or disable `Scale Awareness`
 
 ### Usage
-* Send notes to PitchPath either with MIDI notes, an arpeggiator, or another device like [LenStepper](https://plugins.steinkamp.us/m4l-LenStepper).
+* Send notes to PitchPath with MIDI notes, an arpeggiator, or another device like [LenStepper](https://plugins.steinkamp.us/m4l-LenStepper).
 
 ## TODO
 
