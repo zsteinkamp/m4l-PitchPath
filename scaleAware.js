@@ -4,6 +4,8 @@ autowatch = true
 
 var state = {
   scaleAware: 1,
+  rootNote: 0, // default C
+  scaleIntervals: [0, 2, 4, 5, 7, 9, 11], // default major
 }
 
 var scaleMeta = {
@@ -16,28 +18,15 @@ var scaleMeta = {
 }
 
 function updateScales() {
-  //post('UPDATESCALES\n')
-  if (!scaleMeta.watchers.root) {
-    //post('NOROOTWATERH\n')
-    return
-  }
-  if (!state.scaleAware) {
-    //post('NOTSCALEAWARE\n')
-    return
-  }
-
-  var api = new LiveAPI('live_set')
-  var root = api.get('root_note')
-  var intervals = api.get('scale_intervals')
   scaleMeta.notes = []
 
-  var root_note = root - 12
+  var root_note = state.rootNote - 12
   var note = root_note
 
   // fill scaleMeta.notes with valid note numbers
   while (note <= 127) {
-    for (var i = 0; i < intervals.length; i++) {
-      var interval = intervals[i]
+    for (var i = 0; i < state.scaleIntervals.length; i++) {
+      var interval = state.scaleIntervals[i]
       note = root_note + interval
       if (note >= 0 && note <= 127) {
         scaleMeta.notes.push(note)
@@ -65,22 +54,23 @@ function quantizeNote(tag, noteNum) {
   }
 }
 
-function scaleAware(val) {
-  state.scaleAware = val
+function scaleIntervals() {
+  var intervals = []
+  for (var i = 0; i < arguments.length; i++) {
+    intervals.push(arguments[i])
+  }
+  state.scaleIntervals = intervals
+  //post('INTS ' + state.scaleIntervals.join(',') + '\n')
+  updateScales()
+}
+function rootNote(val) {
+  state.rootNote = val
   updateScales()
 }
 
-function init() {
-  if (!scaleMeta.watchers.root) {
-    scaleMeta.watchers.root = new LiveAPI(updateScales, 'live_set')
-    scaleMeta.watchers.root.property = 'root_note'
-
-    scaleMeta.watchers.int = new LiveAPI(updateScales, 'live_set')
-    scaleMeta.watchers.int.property = 'scale_intervals'
-
-    scaleMeta.watchers.mode = new LiveAPI(updateScales, 'live_set')
-    scaleMeta.watchers.mode.property = 'scale_mode'
-  }
+function scaleAware(val) {
+  state.scaleAware = val
+  updateScales()
 }
 
 post('Reloaded scaleAware.js\n')
