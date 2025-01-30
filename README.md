@@ -1,12 +1,19 @@
 # PitchPath
 
-PitchPath is a sequencer that you program by drawing a line or curve.
+PitchPath is a pitch sequencer that you program by drawing a line or curve.
+
+![How it Looks](images/device.gif)
 
 You specify the time duration the line represents, as well as the lowest and highest notes (absolute or relative).
 
-Send it a MIDI note, and LineSeq will transform or output a note according to where the line is at that moment, optionally with scale awareness.
+Note that PitchPath *only* deals in note pitch, and is completely decoupled from the rhythmic element of a musical phrase. This lets you treat pitch and timing independently. For instance, you could have a short looping clip of notes representing the rhythmic element of a melody. PitchPath receives each note, and depending on where it is in its timing cycle will modify the pitch of the note it received before sending it out. PitchPath can be running at a different cycle length than the clip with notes, so you can get interesting variations or phasing effects between the two.
 
-![How it Looks](images/device.gif)
+In `Absolute` mode, the pitch of those notes is completely disregarded, and the note value from the graph is used instead.
+
+In `Relative` mode, the graph describes an offset to apply to the incoming note value before outputting it.
+
+In both cases, the note that is output may be optionally aligned to the Global Scale in Live 12.
+
 
 ## Installation
 
