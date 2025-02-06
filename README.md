@@ -21,7 +21,8 @@ In both cases, the note that is output may be optionally aligned to the Global S
 
 ## Changelog
 
-* 2025-01-12 [v1](https://github.com/zsteinkamp/m4l-PitchPath/) - Initial release.
+* 2025-02-05 [v2](https://github.com/zsteinkamp/m4l-PitchPath/releases/download/v2/PitchPath-v2.amxd) - Allowed to run free when the transport is not running; Fixed a bug around relative pitch mode and incoming note pitch lag.
+* 2025-01-12 [v1](https://github.com/zsteinkamp/m4l-PitchPath/releases/download/v1/PitchPath-v1.amxd) - Initial release.
 
 ## Usage
 
