@@ -33,6 +33,7 @@ In both cases, the note that is output may be optionally aligned to the Global S
   * `Relative` mode will adjust the pitch of the incoming note within the constraints of the `Highest` and `Lowest` values.
 * Select a time interval that the graph represents.
 * Enable or disable `Scale Awareness`
+* Adjust the Phase of the time cursor. 0% will start at the left edge when the transport starts, 50% will start in the middle.
 
 ### Usage
 * Send notes to PitchPath with MIDI notes, an arpeggiator, or another device like [LenStepper](https://plugins.steinkamp.us/m4l-LenStepper).
