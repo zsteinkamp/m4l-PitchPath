@@ -6,6 +6,8 @@ PitchPath is a pitch sequencer that you program by drawing a line or curve.
 
 You specify the time duration the line represents, as well as the lowest and highest notes (absolute or relative).
 
+<iframe width="100%" style="border: 20px solid black; aspect-ratio: 16 / 9" src="https://www.youtube.com/embed/2k_Yz8-ukYg?si=4bahzoA_1mXxI-eu" title="Pitch Path Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Note that PitchPath *only* deals in note pitch, and is completely decoupled from the rhythmic element of a musical phrase. This lets you treat pitch and timing independently. For instance, you could have a short looping clip of notes representing the rhythmic element of a melody. PitchPath receives each note, and depending on where it is in its own timing cycle (controlled by the `Rate` knob) will modify the pitch of the note it received before sending it out. PitchPath can be running at a different cycle length than the clip with notes, so you can get interesting variations or phasing effects between the two.
 
 In `Absolute` mode, the pitch of those notes is completely disregarded, and the note value from the graph is used instead.
