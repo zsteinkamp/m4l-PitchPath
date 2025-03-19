@@ -19,7 +19,7 @@ In both cases, the note that is output may be optionally aligned to the Global S
 
 ## Installation
 
-[Download the newest .amxd file from the latest release](https://github.com/zsteinkamp/m4l-PitchPath/releaes) or clone this repository, and drag the `PitchPath.amxd` device into a track in Ableton Live.
+[Download the newest .amxd file from the latest release](https://github.com/zsteinkamp/m4l-PitchPath/releases) or clone this repository, and drag the `PitchPath.amxd` device into a track in Ableton Live.
 
 ## Changelog
 
