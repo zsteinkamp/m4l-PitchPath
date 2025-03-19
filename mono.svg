@@ -11,8 +11,8 @@
 >
   <defs>
     <linearGradient id='grad1' x1='0' y1='0' x2='0' y2='1'>
-      <stop offset='10%' style={{ stopColor: 'black' }} />
-      <stop offset='80%' style={{ stopColor: 'black' }} />
+      <stop offset='10%' />
+      <stop offset='80%' />
     </linearGradient>
   </defs>
   <path
