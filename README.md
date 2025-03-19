@@ -23,6 +23,7 @@ In both cases, the note that is output may be optionally aligned to the Global S
 
 ## Changelog
 
+* 2025-03-19 [v5](https://github.com/zsteinkamp/m4l-PitchPath/releases/download/v5/PitchPath-v5.amxd) - Fix problem with inconsistency around the end of the path; Thanks Rob Schoen for helping me to find a solution! Lock on to transport if added to a set and the transport is running. Thanks @louiswarynski9039 for highlighting this bug from the video. :)
 * 2025-03-17 [v4](https://github.com/zsteinkamp/m4l-PitchPath/releases/download/v4/PitchPath-v4.amxd) - Improve Phase implementation. Set to 0.5% if you want more consistent MIDI results.
 * 2025-03-17 [v3](https://github.com/zsteinkamp/m4l-PitchPath/releases/download/v3/PitchPath-v3.amxd) - Add Phase dial, Stop mode, instructions, and shape presets.
 * 2025-02-05 [v2](https://github.com/zsteinkamp/m4l-PitchPath/releases/download/v2/PitchPath-v2.amxd) - Allowed to run free when the transport is not running; Fixed a bug around relative pitch mode and incoming note pitch lag.
