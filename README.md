@@ -14,6 +14,8 @@ In `Absolute` mode, the pitch of those notes is completely disregarded, and the 
 
 In `Relative` mode, the graph describes an offset to apply to the incoming note value before outputting it.
 
+<iframe width="100%" style="border: 20px solid black; aspect-ratio: 16 / 9" src="https://www.youtube.com/embed/Fn-wUfJkEwE?si=BAGnZF2Re63iLusp" title="Pitch Path Relative Mode" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 In both cases, the note that is output may be optionally aligned to the Global Scale in Live 12.
 
 
